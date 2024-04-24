@@ -1,6 +1,5 @@
 <?php 
-	include("connection.php");
-
+	include("../connection.php");
 	if(isset($_POST['btnSave'])){
 		$txtName = $_POST['txtName'];
 		$txtEmail = $_POST['txtEmail'];
@@ -49,7 +48,7 @@
 			$insertQuery = "INSERT INTO customers (customer_name, customer_email, customer_password, customer_address, customer_phone_number, nrc_no, nrc_photo, customer_profile)
 			VALUES (?, ?, ?, ?, ?, ?, ?,?)";
 			$insertStmt = mysqli_prepare($connect, $insertQuery);
-			mysqli_stmt_bind_param($insertStmt, 'ssssssss', $txtName, $txtEmail, $txtPassword, $txtAddress, $txtPhoneNumber, $txtNrcNo,$fileNrcName,$fileProfileName);
+			mysqli_stmt_bind_param($insertStmt, 'ssssssss', $txtName, $txtEmail, $hashedPassword, $txtAddress, $txtPhoneNumber, $txtNrcNo, $fileNrcName, $fileProfileName);
 			$res1 = mysqli_stmt_execute($insertStmt);
 			if(!$res1){
 				echo"<p>Opps! Something went wrong".mysqli_error($connect)."</p>";
@@ -81,7 +80,7 @@
 			<tr>
 				<td>Email Address</td>
 				<td>
-					<input type="text" name="txtEmail" required placeholder="youremail@yahoo.com">
+					<input type="email" name="txtEmail" required placeholder="youremail@yahoo.com">
 				</td>
 			</tr>
 			<tr>
