@@ -32,7 +32,7 @@
 		//----------------
 
 		//------check email already exists
-		$checkEmail = "SELECT * FROM customers WHERE email=?";
+		$checkEmail = "SELECT * FROM customers WHERE customer_email=?";
 		$stmt = mysqli_prepare($connect, $checkEmail);
 		mysqli_stmt_bind_param($stmt, 's', $txtEmail);
 		mysqli_stmt_execute($stmt);
@@ -45,34 +45,9 @@
 			echo"<script>window.location='register.php'</script>";
 		}
 		else{
-			$checkEmailAdmin = "SELECT * FROM staffs WHERE email=?";
-			$stmt = mysqli_prepare($connect, $checkEmailAdmin);
-			mysqli_stmt_bind_param($stmt, 's', $txtEmail);
-			mysqli_stmt_execute($stmt);
-			$resu = mysqli_stmt_get_result($stmt);
-			if($resu === false){
-				echo"Error: ".mysqli_error($connect);
-			}
-			elseif (mysqli_num_rows($resu) > 0){
-				echo"<script>window.alert('Email Already Exist')</script>";
-				echo"<script>window.location='register.php'</script>";
-			}
-			else{
-				$hashedPassword = password_hash($txtPassword, PASSWORD_DEFAULT);//hash password
-				$insertQuery = "INSERT INTO customers (customer_name, customer_email, customer_password, customer_address, customer_phone_number, nrc_no, nrc_photo, customer_profile)
-				VALUES (?, ?, ?, ?, ?, ?, ?,?)";
-				$insertStmt = mysqli_prepare($connect, $insertQuery);
-				mysqli_stmt_bind_param($insertStmt, 'ssssssss', $txtName, $txtEmail, $txtPassword, $txtAddress, $txtPhoneNumber, $txtNrcNo,$fileNrc,$fileProfile);
-				$res1 = mysqli_stmt_execute($insertStmt);
-				if(!$res1){
-					echo"<p>Opps! Something went wrong".mysqli_error($connect)."</p>";
-				}
-				else{
-					echo"<script>window.alert('Customer Account Created')</script>";
-					echo"<script>window.location='login.php'</script>";
-				}
-			}
-		}
+            echo"<script>window.alert('Customer Account Created')</script>";
+            echo"<script>window.location='login.php'</script>";
+        }
 	}
 ?>
 

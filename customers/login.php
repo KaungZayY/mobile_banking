@@ -1,3 +1,38 @@
+<?php
+	session_start(); 
+	include('connection.php');
+	if (isset($_POST['btnLogin'])) {
+		$email = $_POST['txtEmail'];
+		$password = $_POST['txtPassword'];
+		
+		// Create a prepared statement
+		$select = "SELECT * FROM customers WHERE customer_email=?";
+		$stmt = mysqli_prepare($connect, $select);
+		
+		// Bind parameters to the prepared statement
+		mysqli_stmt_bind_param($stmt, "s", $email);
+		
+		// Execute the prepared statement
+		mysqli_stmt_execute($stmt);
+		
+		// Store the result
+		$res = mysqli_stmt_get_result($stmt);
+		
+		// Fetch the data row
+		$data_row = mysqli_fetch_array($res);
+		
+		if ($data_row != null && password_verify($password, $data_row['customer_password'])) {
+			$_SESSION['customer_id']=$data_row['customer_id'];
+			$_SESSION['customer_name']=$data_row['customer_name'];
+			echo "<script>window.alert('User Login Successful')</script>";
+			echo "<script>window.location='home.php'</script>";
+		} else {
+            echo "<script>window.alert('Cannot Login, check email and password again')</script>";
+            echo "<script>window.location='login.php'</script>";
+        }
+
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
