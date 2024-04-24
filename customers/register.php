@@ -45,9 +45,20 @@
 			echo"<script>window.location='register.php'</script>";
 		}
 		else{
-            echo"<script>window.alert('Customer Account Created')</script>";
-            echo"<script>window.location='login.php'</script>";
-        }
+			$hashedPassword = password_hash($txtPassword, PASSWORD_DEFAULT);//hash password
+			$insertQuery = "INSERT INTO customers (customer_name, customer_email, customer_password, customer_address, customer_phone_number, nrc_no, nrc_photo, customer_profile)
+			VALUES (?, ?, ?, ?, ?, ?, ?,?)";
+			$insertStmt = mysqli_prepare($connect, $insertQuery);
+			mysqli_stmt_bind_param($insertStmt, 'ssssssss', $txtName, $txtEmail, $txtPassword, $txtAddress, $txtPhoneNumber, $txtNrcNo,$fileNrcName,$fileProfileName);
+			$res1 = mysqli_stmt_execute($insertStmt);
+			if(!$res1){
+				echo"<p>Opps! Something went wrong".mysqli_error($connect)."</p>";
+			}
+			else{
+				echo"<script>window.alert('Customer Account Created')</script>";
+				echo"<script>window.location='login.php'</script>";
+			}
+		}
 	}
 ?>
 
