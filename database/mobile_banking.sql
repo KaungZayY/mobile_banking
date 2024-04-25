@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2024 at 02:41 PM
+-- Generation Time: Apr 25, 2024 at 07:59 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -29,8 +29,16 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `banks` (
   `bank_id` int(11) NOT NULL,
+  `prefix_code` varchar(6) NOT NULL,
   `bank_address` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `banks`
+--
+
+INSERT INTO `banks` (`bank_id`, `prefix_code`, `bank_address`) VALUES
+(2, '110011', 'Bahan Yangon');
 
 -- --------------------------------------------------------
 
@@ -183,10 +191,18 @@ CREATE TABLE `type_of_loan` (
 CREATE TABLE `wallets` (
   `wallet_id` int(11) NOT NULL,
   `wallet_number` varchar(225) NOT NULL,
+  `wallet_status` varchar(11) NOT NULL,
   `balance` decimal(10,0) NOT NULL,
   `customer_id` int(11) NOT NULL,
   `bank_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `wallets`
+--
+
+INSERT INTO `wallets` (`wallet_id`, `wallet_number`, `wallet_status`, `balance`, `customer_id`, `bank_id`) VALUES
+(1, '11001120240425191442', 'Disabled', 602000, 1, 2);
 
 --
 -- Indexes for dumped tables
@@ -260,7 +276,7 @@ ALTER TABLE `wallets`
 -- AUTO_INCREMENT for table `banks`
 --
 ALTER TABLE `banks`
-  MODIFY `bank_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `bank_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `cash_in`
@@ -314,7 +330,7 @@ ALTER TABLE `type_of_loan`
 -- AUTO_INCREMENT for table `wallets`
 --
 ALTER TABLE `wallets`
-  MODIFY `wallet_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `wallet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
