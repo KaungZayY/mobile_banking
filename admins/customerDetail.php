@@ -48,7 +48,7 @@
                     echo "<td>{$row['wallet_number']}</td>";
                     echo "<td>{$row['balance']}</td>";
                     echo "<td>{$row['wallet_status']}</td>";
-                    echo "<td><a href='wallets/addBalance.php?wid=$wallet_id'>Add Balance</a>";
+                    echo "<td>";
                     if($row['wallet_status']=='Active'){
                         echo "|
                         <a href='wallets/walletDisable.php?wid=$wallet_id'>Disable</a>";
