@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2024 at 07:59 PM
+-- Generation Time: Apr 25, 2024 at 10:44 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -48,12 +48,19 @@ INSERT INTO `banks` (`bank_id`, `prefix_code`, `bank_address`) VALUES
 
 CREATE TABLE `cash_in` (
   `cash_in_id` int(11) NOT NULL,
-  `member_name` varchar(55) NOT NULL,
+  `customer_name` varchar(55) NOT NULL,
   `wallet_id` int(11) NOT NULL,
-  `date` date NOT NULL,
+  `cash_in_date` date NOT NULL,
   `note` varchar(512) NOT NULL,
   `amount` decimal(10,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `cash_in`
+--
+
+INSERT INTO `cash_in` (`cash_in_id`, `customer_name`, `wallet_id`, `cash_in_date`, `note`, `amount`) VALUES
+(1, 'franky', 1, '2024-04-25', 'cash in test', 10000);
 
 -- --------------------------------------------------------
 
@@ -202,7 +209,7 @@ CREATE TABLE `wallets` (
 --
 
 INSERT INTO `wallets` (`wallet_id`, `wallet_number`, `wallet_status`, `balance`, `customer_id`, `bank_id`) VALUES
-(1, '11001120240425191442', 'Disabled', 602000, 1, 2);
+(1, '11001120240425191442', 'Active', 612000, 1, 2);
 
 --
 -- Indexes for dumped tables
@@ -282,7 +289,7 @@ ALTER TABLE `banks`
 -- AUTO_INCREMENT for table `cash_in`
 --
 ALTER TABLE `cash_in`
-  MODIFY `cash_in_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cash_in_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `customers`
