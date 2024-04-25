@@ -1,10 +1,7 @@
 <?php 
     include("../connection.php");
     session_start(); 
-    if (!isset($_SESSION['staff_type_id'])) {
-        echo"<script>window.alert('Unauthorized Access')</script>";
-		echo"<script>window.location='login.php'</script>";
-    }
+    include("authCheck.php");
 
 	if(isset($_POST['btnSave'])){
 		$txtName = $_POST['txtName'];
