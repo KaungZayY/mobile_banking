@@ -49,8 +49,8 @@
 				<td><input type="text" name="txtEmail" required placeholder="youremail@example.com"></td>
 			</tr>
 			<div>
-				<a href="forgotPassword.php">Forgot password?</a>
-				<span> | </span>
+				<!-- <a href="forgotPassword.php">Forgot password?</a>
+				<span> | </span> -->
 				<a href="register.php">Register as a member</a>
 			</div>
 			<tr>

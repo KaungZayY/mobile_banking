@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2024 at 11:08 AM
+-- Generation Time: Apr 25, 2024 at 02:41 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -65,6 +65,13 @@ CREATE TABLE `customers` (
   `customer_profile` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Dumping data for table `customers`
+--
+
+INSERT INTO `customers` (`customer_id`, `customer_name`, `customer_email`, `customer_password`, `customer_address`, `customer_phone_number`, `nrc_no`, `nrc_photo`, `customer_profile`) VALUES
+(1, 'franky', 'franky@gmail.com', '$2y$10$FVLFYloIYlDvs7jkSwIyqeaGn0KOuCD/yfC/idGq60Cw3H8Qagyle', 'Yangon', '0833424234', '7/TAnana(N)123133', '../images/nrcs/franky_test.jpg', '../images/profiles/franky_test.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -100,6 +107,14 @@ CREATE TABLE `staffs` (
   `staff_type_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Dumping data for table `staffs`
+--
+
+INSERT INTO `staffs` (`staff_id`, `staff_name`, `staff_email`, `staff_password`, `staff_address`, `staff_phone_number`, `staff_type_id`) VALUES
+(1, 'admin', 'admin@gmail.com', '$2y$10$6rMTQV.LTfGK.ZEPmMMg/euI4Phs3GCLcSpcmwzFcvga2iXlJuqEi', 'Yangon', '12934452', 1),
+(2, 'manager', 'manager@gmail.com', '$2y$10$I8DjmuSvDTAEaHpwxxvj/utEzD1aIRb300FxgJnU3gkWD69TuJpEm', 'Yangon', '09876446', 3);
+
 -- --------------------------------------------------------
 
 --
@@ -108,8 +123,17 @@ CREATE TABLE `staffs` (
 
 CREATE TABLE `staff_type` (
   `staff_type_id` int(11) NOT NULL,
-  `staff_type` varchar(55) NOT NULL
+  `staff_type` varchar(55) NOT NULL COMMENT '1 = admin, 2 = manager, 3 = staff'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `staff_type`
+--
+
+INSERT INTO `staff_type` (`staff_type_id`, `staff_type`) VALUES
+(1, 'admin'),
+(2, 'Manager'),
+(3, 'Staff');
 
 -- --------------------------------------------------------
 
@@ -248,7 +272,7 @@ ALTER TABLE `cash_in`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `loans`
@@ -260,13 +284,13 @@ ALTER TABLE `loans`
 -- AUTO_INCREMENT for table `staffs`
 --
 ALTER TABLE `staffs`
-  MODIFY `staff_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `staff_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `staff_type`
 --
 ALTER TABLE `staff_type`
-  MODIFY `staff_type_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `staff_type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `transactions`

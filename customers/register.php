@@ -9,10 +9,10 @@
 		$txtNrcNo = $_POST['txtNrcNo'];
 
 		//---Upload Img---
-		$fileProfile=$_FILES['fileProfile']['name'];//Assign var to ui element
-		$Destination="../images/profiles/";//file destination to copy
-		$fileProfileName=$Destination . $txtName ."_". $fileProfile;//set file name before copy/dot is plus operator
-        $copied = copy($_FILES['fileProfile']['tmp_name'], $fileProfileName);//copy(from,to)/so a(temp name) copy to (b)
+		$fileProfile=$_FILES['fileProfile']['name'];
+		$Destination="../images/profiles/";
+		$fileProfileName=$Destination . $txtName ."_". $fileProfile;
+        $copied = copy($_FILES['fileProfile']['tmp_name'], $fileProfileName);
         if(!$copied){
 			echo"<p>Error Uploading Profile Image</p>";
 			exit();
@@ -20,10 +20,10 @@
 		//----------------
 
         //---Upload Img---
-		$fileNrc=$_FILES['fileNrc']['name'];//Assign var to ui element
-		$Destination="../images/nrcs/";//file destination to copy
-		$fileNrcName=$Destination . $txtName ."_". $fileNrc;//set file name before copy/dot is plus operator
-		$copied = copy($_FILES['fileNrc']['tmp_name'], $fileNrcName);//copy(from,to)/so a(temp name) copy to (b)
+		$fileNrc=$_FILES['fileNrc']['name'];
+		$Destination="../images/nrcs/";
+		$fileNrcName=$Destination . $txtName ."_". $fileNrc;
+		$copied = copy($_FILES['fileNrc']['tmp_name'], $fileNrcName);
 		if(!$copied){
 			echo"<p>Error Uploading NRC Image</p>";
 			exit();
