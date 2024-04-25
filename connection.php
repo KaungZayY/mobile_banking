@@ -1,8 +1,8 @@
 <?php 
 
 $servername = "localhost";
-$username = "kzy";
-$password = "123";
+$username = "root";
+$password = "";
 $dbname = "mobile_banking";
 
 // Create connection

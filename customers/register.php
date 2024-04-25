@@ -10,7 +10,7 @@
 
 		//---Upload Img---
 		$fileProfile=$_FILES['fileProfile']['name'];//Assign var to ui element
-		$Destination="images/profiles/";//file destination to copy
+		$Destination="../images/profiles/";//file destination to copy
 		$fileProfileName=$Destination . $txtName ."_". $fileProfile;//set file name before copy/dot is plus operator
         $copied = copy($_FILES['fileProfile']['tmp_name'], $fileProfileName);//copy(from,to)/so a(temp name) copy to (b)
         if(!$copied){
@@ -21,7 +21,7 @@
 
         //---Upload Img---
 		$fileNrc=$_FILES['fileNrc']['name'];//Assign var to ui element
-		$Destination="images/nrcs";//file destination to copy
+		$Destination="../images/nrcs/";//file destination to copy
 		$fileNrcName=$Destination . $txtName ."_". $fileNrc;//set file name before copy/dot is plus operator
 		$copied = copy($_FILES['fileNrc']['tmp_name'], $fileNrcName);//copy(from,to)/so a(temp name) copy to (b)
 		if(!$copied){

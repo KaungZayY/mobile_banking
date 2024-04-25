@@ -1,6 +1,6 @@
 <?php
 	session_start(); 
-	include('connection.php');
+	include('../connection.php');
 	if (isset($_POST['btnLogin'])) {
 		$email = $_POST['txtEmail'];
 		$password = $_POST['txtPassword'];
