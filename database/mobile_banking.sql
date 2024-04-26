@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2024 at 10:44 PM
+-- Generation Time: Apr 26, 2024 at 11:29 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -50,6 +50,7 @@ CREATE TABLE `cash_in` (
   `cash_in_id` int(11) NOT NULL,
   `customer_name` varchar(55) NOT NULL,
   `wallet_id` int(11) NOT NULL,
+  `staff_id` int(11) NOT NULL,
   `cash_in_date` date NOT NULL,
   `note` varchar(512) NOT NULL,
   `amount` decimal(10,0) NOT NULL
@@ -59,8 +60,10 @@ CREATE TABLE `cash_in` (
 -- Dumping data for table `cash_in`
 --
 
-INSERT INTO `cash_in` (`cash_in_id`, `customer_name`, `wallet_id`, `cash_in_date`, `note`, `amount`) VALUES
-(1, 'franky', 1, '2024-04-25', 'cash in test', 10000);
+INSERT INTO `cash_in` (`cash_in_id`, `customer_name`, `wallet_id`, `staff_id`, `cash_in_date`, `note`, `amount`) VALUES
+(1, 'franky', 1, 0, '2024-04-25', 'cash in test', 10000),
+(2, 'franky', 1, 0, '2024-04-26', 'test 2', 40000),
+(3, 'franky', 1, 1, '2024-04-26', 'test 3', 20000);
 
 -- --------------------------------------------------------
 
@@ -209,7 +212,7 @@ CREATE TABLE `wallets` (
 --
 
 INSERT INTO `wallets` (`wallet_id`, `wallet_number`, `wallet_status`, `balance`, `customer_id`, `bank_id`) VALUES
-(1, '11001120240425191442', 'Active', 612000, 1, 2);
+(1, '11001120240425191442', 'Active', 672000, 1, 2);
 
 --
 -- Indexes for dumped tables
@@ -289,7 +292,7 @@ ALTER TABLE `banks`
 -- AUTO_INCREMENT for table `cash_in`
 --
 ALTER TABLE `cash_in`
-  MODIFY `cash_in_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `cash_in_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `customers`
