@@ -22,10 +22,10 @@
 
         $staff_id = $_SESSION['staff_id'];
 
-        $insertQuery = "INSERT INTO cash_in (customer_name, wallet_id, note, amount, cash_in_date)
-			VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP)";
+        $insertQuery = "INSERT INTO cash_in (customer_name, wallet_id, staff_id, note, amount, cash_in_date)
+			VALUES (?, ?, ?, ?, ?, CURRENT_TIMESTAMP)";
 			$insertStmt = mysqli_prepare($connect, $insertQuery);
-			mysqli_stmt_bind_param($insertStmt, 'sssi', $customer_name, $wallet_id, $note, $amount);
+			mysqli_stmt_bind_param($insertStmt, 'ssisi', $customer_name, $wallet_id, $staff_id, $note, $amount);
 			$res1 = mysqli_stmt_execute($insertStmt);
 			if(!$res1){
 				echo"<p>Opps! Something went wrong".mysqli_error($connect)."</p>";
