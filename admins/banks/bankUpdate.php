@@ -44,7 +44,7 @@
 <body>
 	<form action="bankUpdate.php" method = "POST">
 		<fieldset>
-		<legend>Add New Branch</legend>
+		<legend>Update Branch Info</legend>
 		<table>
 			<tr>
 				<td>Prefix Code</td>
