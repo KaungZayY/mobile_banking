@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2024 at 11:29 AM
+-- Generation Time: Apr 27, 2024 at 09:33 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -88,7 +88,8 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`customer_id`, `customer_name`, `customer_email`, `customer_password`, `customer_address`, `customer_phone_number`, `nrc_no`, `nrc_photo`, `customer_profile`) VALUES
-(1, 'franky', 'franky@gmail.com', '$2y$10$FVLFYloIYlDvs7jkSwIyqeaGn0KOuCD/yfC/idGq60Cw3H8Qagyle', 'Yangon', '0833424234', '7/TAnana(N)123133', '../images/nrcs/franky_test.jpg', '../images/profiles/franky_test.jpg');
+(1, 'franky', 'franky@gmail.com', '$2y$10$FVLFYloIYlDvs7jkSwIyqeaGn0KOuCD/yfC/idGq60Cw3H8Qagyle', 'Yangon', '0833424234', '7/TAnana(N)123133', '../images/nrcs/franky_test.jpg', '../images/profiles/franky_test.jpg'),
+(2, 'Tommy', 'tommy@gmail.com', '$2y$10$ZvJvQNf8NsriucogXJJPI.gB39O2UWNpxv8jRyXcCQjrETqlN3DZS', 'Bahan Yangon', '098832323', '7/TAnana(N)123134', '../images/nrcs/Tommy_test.jpg', '../images/profiles/Tommy_test.jpg');
 
 -- --------------------------------------------------------
 
@@ -130,7 +131,7 @@ CREATE TABLE `staffs` (
 --
 
 INSERT INTO `staffs` (`staff_id`, `staff_name`, `staff_email`, `staff_password`, `staff_address`, `staff_phone_number`, `staff_type_id`) VALUES
-(1, 'admin', 'admin@gmail.com', '$2y$10$6rMTQV.LTfGK.ZEPmMMg/euI4Phs3GCLcSpcmwzFcvga2iXlJuqEi', 'Yangon', '12934452', 1),
+(1, 'admin', 'admin@gmail.com', '$2y$10$6rMTQV.LTfGK.ZEPmMMg/euI4Phs3GCLcSpcmwzFcvga2iXlJuqEi', 'Yangon', '123456', 1),
 (2, 'manager', 'manager@gmail.com', '$2y$10$I8DjmuSvDTAEaHpwxxvj/utEzD1aIRb300FxgJnU3gkWD69TuJpEm', 'Yangon', '09876446', 3);
 
 -- --------------------------------------------------------
@@ -164,10 +165,17 @@ CREATE TABLE `transactions` (
   `amount` decimal(10,0) NOT NULL,
   `wallet_id_1` int(11) NOT NULL,
   `wallet_id_2` int(11) NOT NULL,
-  `date` date NOT NULL,
+  `transaction_date` date NOT NULL,
   `note` varchar(512) NOT NULL,
   `transaction_type_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `transactions`
+--
+
+INSERT INTO `transactions` (`transaction_id`, `amount`, `wallet_id_1`, `wallet_id_2`, `transaction_date`, `note`, `transaction_type_id`) VALUES
+(1, 200000, 1, 2, '2024-04-27', 'transfering 200000', 1);
 
 -- --------------------------------------------------------
 
@@ -179,6 +187,13 @@ CREATE TABLE `transaction_type` (
   `transaction_type_id` int(11) NOT NULL,
   `transaction_type` varchar(55) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `transaction_type`
+--
+
+INSERT INTO `transaction_type` (`transaction_type_id`, `transaction_type`) VALUES
+(1, 'Own Account Transfer');
 
 -- --------------------------------------------------------
 
@@ -212,7 +227,8 @@ CREATE TABLE `wallets` (
 --
 
 INSERT INTO `wallets` (`wallet_id`, `wallet_number`, `wallet_status`, `balance`, `customer_id`, `bank_id`) VALUES
-(1, '11001120240425191442', 'Active', 672000, 1, 2);
+(1, '11001120240425191442', 'Active', 472000, 1, 2),
+(2, '11001120240427163040', 'Active', 210000, 2, 2);
 
 --
 -- Indexes for dumped tables
@@ -298,7 +314,7 @@ ALTER TABLE `cash_in`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `loans`
@@ -322,25 +338,25 @@ ALTER TABLE `staff_type`
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `transaction_type`
 --
 ALTER TABLE `transaction_type`
-  MODIFY `transaction_type_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `transaction_type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `type_of_loan`
 --
 ALTER TABLE `type_of_loan`
-  MODIFY `type_of_loan_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `type_of_loan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `wallets`
 --
 ALTER TABLE `wallets`
-  MODIFY `wallet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `wallet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
