@@ -39,7 +39,7 @@
                     echo "<td>{$row['wallet_status']}</td>";
                     echo "<td><a href='transactions/cashInHistory.php?wid=$wallet_id'>Cash In</a> |
                     <a href='transactions/transactionHistory.php?wid=$wallet_id'>Transactions</a> |
-                    <a href='loans.php?wid=$wallet_id'>Loans</a>";
+                    <a href='loans/loanList.php?wid=$wallet_id'>Loans</a>";
                     echo "</td>";
                     echo "</tr>";
                 }
