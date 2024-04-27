@@ -51,7 +51,7 @@
 			<div>
 				<!-- <a href="forgotPassword.php">Forgot password?</a>
 				<span> | </span> -->
-				<a href="register.php">Register as a member</a>
+				<a href="register.php">Register as new Customer</a>
 			</div>
 			<tr>
 				<td>Password</td>
