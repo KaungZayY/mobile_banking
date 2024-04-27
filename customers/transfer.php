@@ -47,9 +47,9 @@ include("../connection.php");
                 mysqli_stmt_bind_param($plus_stmt, "ii", $plus_balance, $wallet_id_2);
                 $plus = mysqli_stmt_execute($plus_stmt);
                 if($plus){
-                    $insertQuery = "INSERT INTO transactions (amount, wallet_id_1, wallet_id_2, transaction_date, note) VALUES (?, ?, ?, CURRENT_TIMESTAMP, ?)";
+                    $insertQuery = "INSERT INTO transactions (amount, wallet_id_1, wallet_id_2, transaction_date, note, transaction_type_id) VALUES (?, ?, ?, CURRENT_TIMESTAMP, ?, ?)";
 			        $insertStmt = mysqli_prepare($connect, $insertQuery);
-			        mysqli_stmt_bind_param($insertStmt, 'iiis', $amount, $wallet_id_1, $wallet_id_1, $note);
+			        mysqli_stmt_bind_param($insertStmt, 'iiisi', $amount, $wallet_id_1, $wallet_id_2, $note, $transaction_type_id);
 			        $res1 = mysqli_stmt_execute($insertStmt);
                     if(!$res1){
                         echo"<p>Opps! Something went wrong".mysqli_error($connect)."</p>";
