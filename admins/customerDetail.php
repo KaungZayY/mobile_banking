@@ -68,7 +68,7 @@
             ?>
         </tbody>
     </table>
-    <a href="wallets/createNewWallet.php?cid=<?php echo $customer_id; ?>">Add New Wallet</a>
+    <a href="wallets/createNewWallet.php?cid=<?php echo $customer_id; ?>"><button type="button" style="background-color:#4CAF50;color:white;margin:4px;">Add New Wallet</button></a>
 </body>
 </html>
 

@@ -52,7 +52,7 @@
         </tbody>
     </table>
 </body>
-<a href="transfer.php">Transfer</a>
+<a href="transfer.php"><button type="button" style="background-color:#4CAF50;color:white;margin:4px;">Transfer</button></a>
 </html>
 
 <?php

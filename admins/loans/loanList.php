@@ -59,7 +59,7 @@
             ?>
         </tbody>
     </table>
-    <a href="../home.php">Back</a>
+    <a href="../home.php"><button type="button" style="background-color:#4CAF50;color:white;margin:4px;">Back</button></a>
 </body>
 </html>
 <?php

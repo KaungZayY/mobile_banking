@@ -29,7 +29,7 @@
     </style>
 </head>
 <body>
-    <a href="typeOfLoanCreate.php">Add New Loan Type</a>
+    <a href="typeOfLoanCreate.php"><button type="button" style="background-color:#4CAF50;color:white;margin:4px;">Add New Loan Type</button></a>
     <h2>Loan Types</h2>
     <table>
         <thead>

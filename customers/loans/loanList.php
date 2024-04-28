@@ -105,8 +105,8 @@
             ?>
         </tbody>
     </table>
-    <a href="../home.php">Back</a>
-    <a href="loanApply.php">Loan Apply</a>
+    <a href="../home.php"><button type="button" style="background-color:#4CAF50;color:white;margin:4px;">Back</button></a>
+    <a href="loanApply.php"><button type="button" style="background-color:#4CAF50;color:white;margin:4px;">Loan Apply</button></a>
 </body>
 </html>
 

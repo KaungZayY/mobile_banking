@@ -29,7 +29,7 @@
     </style>
 </head>
 <body>
-    <a href="transactionTypeCreate.php">Add Transaction Type</a>
+    <a href="transactionTypeCreate.php"><button type="button" style="background-color:#4CAF50;color:white;margin:4px;">Add Transaction Type</button></a>
     <h2>Transaction Types</h2>
     <table>
         <thead>
