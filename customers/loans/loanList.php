@@ -54,7 +54,9 @@
                     echo "<td>{$row['amount']}</td>";
                     echo "<td>{$row['type_of_loan']}</td>";
                     echo "<td>{$row['loan_status']}</td>";
-                    echo "<td><a href='loanRepayment.php?lid=$loan_id'>Repay</a></td>";
+                    if($row['loan_status']==='approved'){
+                        echo "<td><a href='loanRepayment.php?lid=$loan_id'>Repay</a></td>";
+                    }
                     echo "</tr>";
                 }
 
