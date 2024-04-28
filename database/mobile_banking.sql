@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 27, 2024 at 09:33 PM
+-- Generation Time: Apr 28, 2024 at 03:04 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -33,13 +33,6 @@ CREATE TABLE `banks` (
   `bank_address` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
---
--- Dumping data for table `banks`
---
-
-INSERT INTO `banks` (`bank_id`, `prefix_code`, `bank_address`) VALUES
-(2, '110011', 'Bahan Yangon');
-
 -- --------------------------------------------------------
 
 --
@@ -55,15 +48,6 @@ CREATE TABLE `cash_in` (
   `note` varchar(512) NOT NULL,
   `amount` decimal(10,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `cash_in`
---
-
-INSERT INTO `cash_in` (`cash_in_id`, `customer_name`, `wallet_id`, `staff_id`, `cash_in_date`, `note`, `amount`) VALUES
-(1, 'franky', 1, 0, '2024-04-25', 'cash in test', 10000),
-(2, 'franky', 1, 0, '2024-04-26', 'test 2', 40000),
-(3, 'franky', 1, 1, '2024-04-26', 'test 3', 20000);
 
 -- --------------------------------------------------------
 
@@ -83,14 +67,6 @@ CREATE TABLE `customers` (
   `customer_profile` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
---
--- Dumping data for table `customers`
---
-
-INSERT INTO `customers` (`customer_id`, `customer_name`, `customer_email`, `customer_password`, `customer_address`, `customer_phone_number`, `nrc_no`, `nrc_photo`, `customer_profile`) VALUES
-(1, 'franky', 'franky@gmail.com', '$2y$10$FVLFYloIYlDvs7jkSwIyqeaGn0KOuCD/yfC/idGq60Cw3H8Qagyle', 'Yangon', '0833424234', '7/TAnana(N)123133', '../images/nrcs/franky_test.jpg', '../images/profiles/franky_test.jpg'),
-(2, 'Tommy', 'tommy@gmail.com', '$2y$10$ZvJvQNf8NsriucogXJJPI.gB39O2UWNpxv8jRyXcCQjrETqlN3DZS', 'Bahan Yangon', '098832323', '7/TAnana(N)123134', '../images/nrcs/Tommy_test.jpg', '../images/profiles/Tommy_test.jpg');
-
 -- --------------------------------------------------------
 
 --
@@ -104,7 +80,7 @@ CREATE TABLE `loans` (
   `loan_start_date` date NOT NULL,
   `loan_end_date` date NOT NULL,
   `loan_status` varchar(11) NOT NULL,
-  `description` varchar(512) NOT NULL,
+  `loan_description` varchar(512) NOT NULL,
   `police_recommendation_letter` varchar(225) NOT NULL,
   `work_recommendation_letter` varchar(225) NOT NULL,
   `wallet_id` int(11) NOT NULL
@@ -170,13 +146,6 @@ CREATE TABLE `transactions` (
   `transaction_type_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
---
--- Dumping data for table `transactions`
---
-
-INSERT INTO `transactions` (`transaction_id`, `amount`, `wallet_id_1`, `wallet_id_2`, `transaction_date`, `note`, `transaction_type_id`) VALUES
-(1, 200000, 1, 2, '2024-04-27', 'transfering 200000', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -188,13 +157,6 @@ CREATE TABLE `transaction_type` (
   `transaction_type` varchar(55) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
---
--- Dumping data for table `transaction_type`
---
-
-INSERT INTO `transaction_type` (`transaction_type_id`, `transaction_type`) VALUES
-(1, 'Own Account Transfer');
-
 -- --------------------------------------------------------
 
 --
@@ -203,7 +165,7 @@ INSERT INTO `transaction_type` (`transaction_type_id`, `transaction_type`) VALUE
 
 CREATE TABLE `type_of_loan` (
   `type_of_loan_id` int(11) NOT NULL,
-  `type_of_loan` varchar(11) NOT NULL,
+  `type_of_loan` varchar(50) NOT NULL,
   `rate` decimal(10,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
@@ -221,14 +183,6 @@ CREATE TABLE `wallets` (
   `customer_id` int(11) NOT NULL,
   `bank_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `wallets`
---
-
-INSERT INTO `wallets` (`wallet_id`, `wallet_number`, `wallet_status`, `balance`, `customer_id`, `bank_id`) VALUES
-(1, '11001120240425191442', 'Active', 472000, 1, 2),
-(2, '11001120240427163040', 'Active', 210000, 2, 2);
 
 --
 -- Indexes for dumped tables
@@ -302,19 +256,19 @@ ALTER TABLE `wallets`
 -- AUTO_INCREMENT for table `banks`
 --
 ALTER TABLE `banks`
-  MODIFY `bank_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `bank_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `cash_in`
 --
 ALTER TABLE `cash_in`
-  MODIFY `cash_in_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `cash_in_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `loans`
@@ -338,25 +292,25 @@ ALTER TABLE `staff_type`
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `transaction_type`
 --
 ALTER TABLE `transaction_type`
-  MODIFY `transaction_type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `transaction_type_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `type_of_loan`
 --
 ALTER TABLE `type_of_loan`
-  MODIFY `type_of_loan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `type_of_loan_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `wallets`
 --
 ALTER TABLE `wallets`
-  MODIFY `wallet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `wallet_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
