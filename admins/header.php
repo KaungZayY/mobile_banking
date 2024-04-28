@@ -30,6 +30,7 @@
 						<li><a href="/mobile_banking/admins/banks/bankList.php">Branches</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
+						<li><a href="/mobile_banking/admins/loans/loanList.php">Loan List</a></li>
 						<li><a href="/mobile_banking/admins/transactions.php">Transactions</a></li>
 						<li><a href="/mobile_banking/admins/register.php">Create Staff Account</a></li>
 						<li><a href="/mobile_banking/admins/logout.php">Logout</a></li>

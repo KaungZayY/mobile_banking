@@ -105,11 +105,6 @@
 				<td>Email</td>
 				<td><input type="text" name="txtEmail" required placeholder="youremail@example.com"></td>
 			</tr>
-			<div>
-				<!-- <a href="forgotPassword.php">Forgot password?</a>
-				<span> | </span> -->
-				<a href="register.php">Add New Staff Account</a>
-			</div>
 			<tr>
 				<td>Password</td>
 				<td><input type="password" name="txtPassword" required placeholder="123"></td>

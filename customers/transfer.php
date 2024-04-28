@@ -147,3 +147,6 @@ include("../connection.php");
 	</form>
 </body>
 </html>
+
+<?php
+    include('../footer.php');
