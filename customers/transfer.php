@@ -1,5 +1,5 @@
 <?php
-
+include("header.php");
 include("../connection.php");
     session_start(); 
     include("authCheck.php");

@@ -1,4 +1,5 @@
 <?php 
+include("header.php");
 include('../connection.php');
 session_start();
     if(isset($_SESSION['customer_id'])){
@@ -96,3 +97,6 @@ session_start();
 	</form>
 </body>
 </html>
+
+<?php
+    include('../footer.php');

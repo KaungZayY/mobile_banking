@@ -1,4 +1,5 @@
 <?php 
+    include("../header.php");
     include("../../connection.php");
     session_start(); 
     include("../authCheck.php");
@@ -40,6 +41,60 @@
 <html>
 <head>
 	<title></title>
+	<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        form {
+            width: 50%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        fieldset {
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+        legend {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        table {
+            width: 100%;
+        }
+        table tr {
+            margin-bottom: 15px;
+        }
+        table td:first-child {
+            width: 30%;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        input[type="submit"], input[type="reset"] {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
 	<form action="transactionTypeCreate.php" method = "POST">
@@ -64,3 +119,6 @@
 	</form>
 </body>
 </html>
+
+<?php
+    include('../../footer.php');

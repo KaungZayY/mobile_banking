@@ -1,4 +1,5 @@
 <?php
+    include('header.php');
     include("../connection.php");
     session_start(); 
     include("authCheck.php");
@@ -49,7 +50,7 @@
                     echo "<td>{$row['balance']}</td>";
                     echo "<td>{$row['wallet_status']}</td>";
                     echo "<td>";
-                    if($row['wallet_status']=='Active'){
+                    if($row['wallet_status']=='active'){
                         echo "|
                         <a href='wallets/walletDisable.php?wid=$wallet_id'>Disable</a>";
                     }
@@ -71,3 +72,5 @@
 </body>
 </html>
 
+<?php
+    include('../footer.php');

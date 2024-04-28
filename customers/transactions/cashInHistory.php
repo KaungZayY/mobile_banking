@@ -1,4 +1,5 @@
 <?php
+	include("../header.php");
     include("../../connection.php");
     session_start(); 
     include("../authCheck.php");
@@ -23,6 +24,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cash In Histories</title>
+    <style>
+        body {
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        h4 {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        .no-data {
+            text-align: center;
+        }
+        .actions {
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <h3>Wallet Number : <?php echo $wallet_number;?></h3>
@@ -55,3 +94,6 @@
     <a href="../home.php">Back</a>
 </body>
 </html>
+
+<?php
+    include('../footer.php');

@@ -1,4 +1,5 @@
 <?php
+    include("header.php");
     include("../connection.php");
     session_start(); 
     include("authCheck.php");
@@ -53,4 +54,7 @@
 </body>
 <a href="transfer.php">Transfer</a>
 </html>
+
+<?php
+    include('../footer.php');
 

@@ -1,4 +1,5 @@
 <?php
+    include('header.php');
     include("../connection.php");
     session_start(); 
     include("authCheck.php");
@@ -53,3 +54,6 @@
     <a href="../home.php">Back</a>
 </body>
 </html>
+
+<?php
+    include('../footer.php');

@@ -1,4 +1,5 @@
 <?php 
+	include("../header.php");
 	include("../../connection.php");
     session_start(); 
     include("../authCheck.php");
@@ -60,7 +61,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Loan Apply</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		form {
+			width: 50%;
+			margin: auto;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+		fieldset {
+			border: none;
+			margin: 0;
+			padding: 0;
+		}
+		legend {
+			font-size: 20px;
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+		td {
+			padding: 10px 0;
+		}
+		input[type="date"],
+		input[type="number"],
+		select,
+		textarea {
+			width: 100%;
+			padding: 8px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			box-sizing: border-box;
+			margin-bottom: 10px;
+		}
+		input[type="submit"],
+		input[type="reset"] {
+			padding: 10px 20px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		input[type="submit"]:hover,
+		input[type="reset"]:hover {
+			background-color: #45a049;
+		}
+	</style>
 </head>
 <body>
 	<form action="loanApply.php" method = "POST" enctype="multipart/form-data">
@@ -145,3 +201,6 @@
 	</form>
 </body>
 </html>
+
+<?php
+    include('../footer.php');
