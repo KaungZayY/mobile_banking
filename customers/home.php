@@ -46,7 +46,7 @@
                 }
 
                 if($count < 1) {
-                    echo "<tr><td class='no-data' colspan='2'>No Wallet</td></tr>";
+                    echo "<tr><td class='no-data' colspan='4'>No Wallet</td></tr>";
                 }
             ?>
         </tbody>

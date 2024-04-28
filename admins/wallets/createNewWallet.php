@@ -144,7 +144,7 @@
                                 </td>
                                 </tr>';
                     } else {
-                        echo 'No Branches found.';
+                        echo '<tr><td>No Branches found.</td></tr>';
                     }
             ?>
 			<tr><td></td>

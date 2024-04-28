@@ -54,7 +54,7 @@
                 }
 
                 if($count < 1) {
-                    echo "<tr><td class='no-data' colspan='6'>No Recent Loan History</td></tr>";
+                    echo "<tr><td class='no-data' colspan='7'>No Recent Loan History</td></tr>";
                 }
             ?>
         </tbody>
