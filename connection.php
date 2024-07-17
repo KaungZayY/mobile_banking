@@ -1,8 +1,8 @@
 <?php 
 
-$servername = "localhost";
-$username = "root";
-$password = "";
+$servername = "db";
+$username = "docker";
+$password = "123";
 $dbname = "mobile_banking";
 
 // Create connection
