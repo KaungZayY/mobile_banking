@@ -1,6 +1,6 @@
 <?php
-	include('loginHeader.php');
 	session_start(); 
+	include('loginHeader.php');
 	include('../connection.php');
 	if (isset($_POST['btnLogin'])) {
 		$email = $_POST['txtEmail'];

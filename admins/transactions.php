@@ -1,7 +1,7 @@
 <?php
+    session_start(); 
     include('header.php');
     include("../connection.php");
-    session_start(); 
     include("authCheck.php");
 
     $select = "SELECT transactions.*, t_type.transaction_type, w1.wallet_number as w_num_1, w2.wallet_number as w_num_2 FROM transactions 

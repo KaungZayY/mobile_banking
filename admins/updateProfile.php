@@ -1,7 +1,7 @@
 <?php 
+	session_start();
     include('header.php');
 	include('../connection.php');
-	session_start();
 	include("authCheck.php");
     if(isset($_SESSION['staff_id'])){
         $staff_id = $_SESSION['staff_id'];
