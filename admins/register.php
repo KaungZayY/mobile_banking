@@ -10,10 +10,9 @@
 		$txtPassword = $_POST['txtPassword'];
 		$txtPhoneNumber = $_POST['txtPhoneNumber'];
 		$txtAddress = $_POST['txtAddress'];
-        $staffTypeId = $_POST['staffTypeId'];
-
+        
         if($staffTypeId==""){
-            $staffTypeId = 3;
+            $staff_type_id = 3;
         }
 		//------check email already exists
 		$checkEmail = "SELECT * FROM staffs WHERE staff_email=?";
@@ -33,7 +32,7 @@
 			$insertQuery = "INSERT INTO staffs (staff_name, staff_email, staff_password, staff_address, staff_phone_number, staff_type_id)
 			VALUES (?, ?, ?, ?, ?, ?)";
 			$insertStmt = mysqli_prepare($connect, $insertQuery);
-			mysqli_stmt_bind_param($insertStmt, 'ssssss', $txtName, $txtEmail, $hashedPassword, $txtAddress, $txtPhoneNumber, $staffTypeId);
+			mysqli_stmt_bind_param($insertStmt, 'ssssss', $txtName, $txtEmail, $hashedPassword, $txtAddress, $txtPhoneNumber, $staff_type_id);
 			$res1 = mysqli_stmt_execute($insertStmt);
 			if(!$res1){
 				echo"<p>Opps! Something went wrong".mysqli_error($connect)."</p>";
