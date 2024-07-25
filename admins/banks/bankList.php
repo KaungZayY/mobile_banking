@@ -1,7 +1,7 @@
 <?php 
+    session_start(); 
     include("../header.php");
     include("../../connection.php");
-    session_start(); 
     include("../authCheck.php");
 
     $query = "SELECT * FROM banks";

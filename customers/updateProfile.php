@@ -1,7 +1,7 @@
 <?php 
-include("header.php");
-include('../connection.php');
-session_start();
+    session_start();
+    include("header.php");
+    include('../connection.php');
     if(isset($_SESSION['customer_id'])){
         $customer_id = $_SESSION['customer_id'];
         $customer_name = $_SESSION['customer_name'];

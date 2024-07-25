@@ -1,7 +1,7 @@
 <?php 
+    session_start(); 
     include('header.php');
     include("../connection.php");
-    session_start(); 
     include("authCheck.php");
 
     $query = "SELECT customer_id, customer_name, customer_email, customer_address, customer_phone_number, nrc_no FROM customers";

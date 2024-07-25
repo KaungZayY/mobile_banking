@@ -1,7 +1,7 @@
 <?php
-include("header.php");
-include("../connection.php");
     session_start(); 
+    include("header.php");
+    include("../connection.php");
     include("authCheck.php");
 
     $customer_id = $_SESSION['customer_id'];

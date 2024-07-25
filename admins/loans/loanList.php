@@ -1,7 +1,7 @@
 <?php
+    session_start(); 
     include("../header.php");
     include("../../connection.php");
-    session_start(); 
     include("../authCheck.php");
 
     $select = "SELECT loans.*, l.type_of_loan, w.wallet_number 

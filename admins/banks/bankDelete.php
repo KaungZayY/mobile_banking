@@ -1,6 +1,6 @@
 <?php 
-	include("../../connection.php");
     session_start(); 
+	include("../../connection.php");
     include("../authCheck.php");
 
 	if (isset($_REQUEST['bid'])) {

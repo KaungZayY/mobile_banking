@@ -18,17 +18,17 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="/mobile_banking/customers/home.php">Internet Banking Website</a>
+					<a class="navbar-brand" href="/customers/home.php">Internet Banking Website</a>
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
-						<li><a href="/mobile_banking/customers/home.php">Home</a></li>
-						<li><a href="/mobile_banking/customers/transfer.php">Transfer</a></li>
-						<li><a href="/mobile_banking/customers/updateProfile.php">Update Info</a></li>
-						<li><a href="/mobile_banking/customers/loans/loanApply.php">Apply Loan</a></li>
+						<li><a href="/customers/home.php">Home</a></li>
+						<li><a href="/customers/transfer.php">Transfer</a></li>
+						<li><a href="/customers/updateProfile.php">Update Info</a></li>
+						<li><a href="/customers/loans/loanApply.php">Apply Loan</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/mobile_banking/customers/logout.php">Logout</a></li>
+						<li><a href="/customers/logout.php">Logout</a></li>
 					</ul>
 				</div>
 			</div>

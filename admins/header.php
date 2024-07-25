@@ -22,18 +22,18 @@
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
-						<li><a href="/mobile_banking/admins/home.php">Home</a></li>
-						<li><a href="/mobile_banking/admins/transactionType/transactionTypeList.php">Transaction Types</a></li>
-						<li><a href="/mobile_banking/admins/typeOfLoan/typeOfLoanList.php">Type Of Loan</a></li>
-						<li><a href="/mobile_banking/admins/wallets/cashIn.php">Cash In</a></li>
-						<li><a href="/mobile_banking/admins/updateProfile.php">Update Info</a></li>
-						<li><a href="/mobile_banking/admins/banks/bankList.php">Branches</a></li>
+						<li><a href="/admins/home.php">Home</a></li>
+						<li><a href="/admins/transactionType/transactionTypeList.php">Transaction Types</a></li>
+						<li><a href="/admins/typeOfLoan/typeOfLoanList.php">Type Of Loan</a></li>
+						<li><a href="/admins/wallets/cashIn.php">Cash In</a></li>
+						<li><a href="/admins/updateProfile.php">Update Info</a></li>
+						<li><a href="/admins/banks/bankList.php">Branches</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/mobile_banking/admins/loans/loanList.php">Loan List</a></li>
-						<li><a href="/mobile_banking/admins/transactions.php">Transactions</a></li>
-						<li><a href="/mobile_banking/admins/register.php">Create Staff Account</a></li>
-						<li><a href="/mobile_banking/admins/logout.php">Logout</a></li>
+						<li><a href="/admins/loans/loanList.php">Loan List</a></li>
+						<li><a href="/admins/transactions.php">Transactions</a></li>
+						<li><a href="/admins/register.php">Create Staff Account</a></li>
+						<li><a href="/admins/logout.php">Logout</a></li>
 					</ul>
 				</div>
 			</div>
