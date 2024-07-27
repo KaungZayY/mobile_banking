@@ -55,8 +55,8 @@ A student-developed prototype designed to simulate a modern online banking syste
 
 ### Technologies Used
 
-- **Frontend:** HTML, CSS, JavaScript
-- **Backend:** PHP, Laravel
+- **Frontend:** HTML, CSS
+- **Backend:** PHP
 - **Database:** MySQL
 
 ## Getting Started
