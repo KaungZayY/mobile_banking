@@ -149,7 +149,14 @@ exit
 
 Go to `http://localhost:8081/` to access phpmyadmin pannel and import the database /database/mobiile_banking.sql 
 
-### Step 7: Restart the container
+### Step 7: Test the app
+
+Type `localhost` on the browser address bar and access the website. 
+
+- **admin email**: `admin@gmail.com`
+- **admin password**: `password`
+
+### Step 8: Restart the container
 
 ```bash
 docker-compose down
